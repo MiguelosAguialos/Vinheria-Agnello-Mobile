@@ -53,7 +53,6 @@ import androidx.compose.ui.unit.sp
 import br.com.mftech.vinheria_agnello.R
 import br.com.mftech.vinheria_agnello.ui.theme.Gold
 import br.com.mftech.vinheria_agnello.ui.theme.VinheriaagnelloTheme
-import br.com.mftech.vinheria_agnello.ui.theme.White
 import br.com.mftech.vinheria_agnello.ui.theme.WineRed
 import br.com.mftech.vinheria_agnello.ui.theme.WineRedDark
 
@@ -105,15 +104,15 @@ fun LoginScreen(navigateToHome: () -> Unit, navigateToSignup: () -> Unit) {
                 }
             }
         },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = navigateToHome,
-                containerColor = Gold,
-                contentColor = WineRedDark
-            ) {
-                Icon(Icons.AutoMirrored.Filled.Login, contentDescription = "Entrar")
-            }
-        }
+//        floatingActionButton = {
+//            FloatingActionButton(
+//                onClick = navigateToHome,
+//                containerColor = Gold,
+//                contentColor = WineRedDark
+//            ) {
+//                Icon(Icons.AutoMirrored.Filled.Login, contentDescription = "Entrar")
+//            }
+//        }
     ) { innerPadding ->
         Column(
             modifier = Modifier

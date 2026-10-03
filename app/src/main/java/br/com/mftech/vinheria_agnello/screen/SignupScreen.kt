@@ -1,6 +1,7 @@
 package br.com.mftech.vinheria_agnello.screen
 
 import android.content.res.Configuration
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,7 +10,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -42,13 +45,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import br.com.mftech.vinheria_agnello.R
 import br.com.mftech.vinheria_agnello.ui.theme.Gold
 import br.com.mftech.vinheria_agnello.ui.theme.WineRed
@@ -92,23 +98,32 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(stringResource(R.string.already_has_account), color = Color.White)
+                    Text(
+                        stringResource(R.string.already_has_account),
+                        color = Color.White,
+                        fontSize = 16.sp
+                    )
                     TextButton(onClick = navigateToLogin) {
-                        Text(stringResource(R.string.login), color = Gold, fontWeight = FontWeight.Bold)
+                        Text(
+                            stringResource(R.string.login),
+                            color = Gold,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        )
                     }
                 }
             }
         },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = navigateToLogin,
-                containerColor = Gold,
-                contentColor = WineRedDark,
-
-            ) {
-                Icon(Icons.Filled.Check, contentDescription = "Criar conta")
-            }
-        }
+//        floatingActionButton = {
+//            FloatingActionButton(
+//                onClick = navigateToLogin,
+//                containerColor = Gold,
+//                contentColor = WineRedDark,
+//
+//            ) {
+//                Icon(Icons.Filled.Check, contentDescription = "Criar conta")
+//            }
+//        }
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -119,30 +134,31 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(Modifier.height(16.dp))
-            Text(
-                stringResource(R.string.join_vinheria_agnello),
-                style = MaterialTheme.typography.headlineSmall,
-                color = WineRed,
-                fontWeight = FontWeight.Bold
+            Image(
+                painter = painterResource(id = R.drawable.winesignuppage),
+                contentDescription = "Wine Signup Logo",
+                modifier = Modifier
+                    .size(150.dp)
+                    .padding(20.dp)
             )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
             Text(
-                stringResource(R.string.create_your_account_to_track_orders_and_curated_selections),
+                stringResource(R.string.create_your_account),
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.primary,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start,
+                modifier = Modifier.fillMaxWidth()
             )
-            Spacer(Modifier.height(24.dp))
-
+            Spacer(Modifier.height(8.dp))
             OutlinedTextField(
                 value = nome,
                 onValueChange = { nome = it },
                 label = { Text(stringResource(R.string.complete_name)) },
                 leadingIcon = { Icon(Icons.Filled.Person, contentDescription = null) },
                 singleLine = true,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp)
             )
             Spacer(Modifier.height(12.dp))
             OutlinedTextField(
@@ -152,7 +168,8 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
                 leadingIcon = { Icon(Icons.Filled.Email, contentDescription = null) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp)
             )
             Spacer(Modifier.height(12.dp))
             OutlinedTextField(
@@ -171,7 +188,8 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 visualTransformation = if (senhaVisivel) VisualTransformation.None else PasswordVisualTransformation(),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp)
             )
             Spacer(Modifier.height(12.dp))
             OutlinedTextField(
@@ -189,7 +207,8 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 visualTransformation = if (senhaVisivel) VisualTransformation.None else PasswordVisualTransformation(),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp)
             )
             Spacer(Modifier.height(20.dp))
             Button(
@@ -199,7 +218,11 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
                     .fillMaxWidth()
                     .height(48.dp)
             ) {
-                Text(stringResource(R.string.create_account), fontWeight = FontWeight.Bold)
+                Text(
+                    stringResource(R.string.create_account),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp
+                )
             }
             Spacer(Modifier.height(24.dp))
         }
