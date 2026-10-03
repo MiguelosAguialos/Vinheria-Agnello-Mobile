@@ -3,6 +3,7 @@ package br.com.mftech.vinheria_agnello.ui.theme
 import androidx.compose.ui.graphics.Color
 
 // Paleta oficial da Vinheria Agnello (mesma do protótipo de alta fidelidade)
+val White = Color(0xFFFFFFFF)
 val WineRed = Color(0xFF5C1029)
 val WineRedDark = Color(0xFF3A0A1B)
 val Gold = Color(0xFFB98B4E)

@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Vinheria-agnello</string>
+    <string name="app_name">Vinheria Agnello</string>
+    <string name="create_account">Criar conta</string>
+    <string name="confirm_password">Confirmar senha</string>
+    <string name="your_password">Senha</string>
+    <string name="your_email">Email</string>
+    <string name="complete_name">Nome completo</string>
+    <string name="create_your_account_to_track_orders_and_curated_selections">Crie sua conta para acompanhar pedidos e seleções personalizadas</string>
+    <string name="join_vinheria_agnello">Entre para Vinheria Agnello</string>
+    <string name="login">Entrar</string>
+    <string name="already_has_account">Já tenho uma conta</string>
+    <string name="dont_have_an_account">Não possui uma conta?</string>
+    <string name="signup">Registrar-se</string>
+    <string name="login_to_continue_your_experience">Entre para continuar</string>
+    <string name="forgot_my_password">Esqueci minha senha</string>
+    <string name="remember_next_time">Lembrar login</string>
 </resources>
