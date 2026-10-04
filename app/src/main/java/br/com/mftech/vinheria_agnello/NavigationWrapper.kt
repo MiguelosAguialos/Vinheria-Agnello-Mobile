@@ -23,7 +23,8 @@ data object Error: NavKey
 
 @Composable
 fun NavigationWrapper(){
-    val backStack = remember { mutableStateListOf<Any>(Home) }
+    // O app sempre começa no Login: é a porta de entrada do fluxo de autenticação.
+    val backStack = remember { mutableStateListOf<Any>(Login) }
 
     // Volta para a tela se ela ja estiver na pilha; caso contrario, empilha
     fun navigateTo(key: NavKey) {
@@ -35,19 +36,25 @@ fun NavigationWrapper(){
         }
     }
 
+    // Usado só no login bem-sucedido: esvazia a pilha inteira (Login, Signup,
+    // o que mais tiver) e deixa só a Home. Sem isso, apertar "voltar" na Home
+    // levaria de volta pro Login, o que não faz sentido depois de autenticado.
+    fun navigateToHomeAfterLogin() {
+        backStack.clear()
+        backStack.add(Home)
+    }
+
     NavDisplay(
         backStack = backStack,
         onBack = { backStack.removeLastOrNull()},
         entryProvider = { key ->
             when(key){
                 is Home -> NavEntry(key){
-                    HomeScreen(
-                        navigateToLogin = { navigateTo(Login) }
-                    )
+                    HomeScreen()
                 }
                 is Login -> NavEntry(key){
                     LoginScreen(
-                        navigateToHome = { navigateTo(Home) },
+                        navigateToHome = { navigateToHomeAfterLogin() },
                         navigateToSignup = { navigateTo(Signup) }
                     )
                 }
