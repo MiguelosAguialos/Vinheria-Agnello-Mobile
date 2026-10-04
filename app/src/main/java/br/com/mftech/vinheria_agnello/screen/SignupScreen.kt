@@ -231,7 +231,7 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
 
 @Preview(
     showSystemUi = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO
+    uiMode = Configuration.UI_MODE_NIGHT_YES
 )
 @Composable
 private fun SignupScreenPreview() {
