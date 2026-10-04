@@ -70,13 +70,7 @@ fun SignupScreen(navigateToLogin: () -> Unit) {
                 onActionClick = navigateToLogin
             )
         },
-//        floatingActionButton = {
-//            AgnelloFab(
-//                icon = Icons.Filled.Check,
-//                contentDescription = stringResource(R.string.create_account),
-//                onClick = navigateToLogin
-//            )
-//        }
+
     ) { innerPadding ->
         Column(
             modifier = Modifier

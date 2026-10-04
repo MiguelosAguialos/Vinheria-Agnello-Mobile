@@ -2,8 +2,7 @@ package br.com.mftech.vinheria_agnello
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
+import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.ui.NavDisplay
@@ -24,7 +23,7 @@ data object Error: NavKey
 @Composable
 fun NavigationWrapper(){
     // O app sempre começa no Login: é a porta de entrada do fluxo de autenticação.
-    val backStack = remember { mutableStateListOf<Any>(Login) }
+    val backStack = rememberNavBackStack(Login)
 
     // Volta para a tela se ela ja estiver na pilha; caso contrario, empilha
     fun navigateTo(key: NavKey) {
