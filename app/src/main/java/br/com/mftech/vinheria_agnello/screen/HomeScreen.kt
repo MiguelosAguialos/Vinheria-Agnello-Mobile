@@ -69,9 +69,10 @@ private val categoryLabelRes = listOf(
 )
 
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navigateToLogin: () -> Unit) {
+fun HomeScreen() {
     var busca by remember { mutableStateOf("") }
     var categoriaSelecionada by remember { mutableIntStateOf(0) }
 
@@ -83,7 +84,7 @@ fun HomeScreen(navigateToLogin: () -> Unit) {
             AgnelloTopAppBar(
                 title = stringResource(R.string.home_top_bar_title),
                 actions = {
-                    IconButton(onClick = navigateToLogin) {
+                    IconButton(onClick = { /* tela do carrinho: fora do escopo deste protótipo */ }) {
                         Icon(
                             Icons.Filled.ShoppingCart,
                             contentDescription = stringResource(R.string.home_cart_content_description)
@@ -97,8 +98,8 @@ fun HomeScreen(navigateToLogin: () -> Unit) {
                 items = listOf(
                     AgnelloBottomNavItem(Icons.Filled.Home, stringResource(R.string.bottom_nav_home)) { /* já está na Home */ },
                     AgnelloBottomNavItem(Icons.Filled.Search, stringResource(R.string.bottom_nav_search)) { /* busca: fora do escopo deste protótipo */ },
-                    AgnelloBottomNavItem(Icons.Filled.ShoppingCart, stringResource(R.string.bottom_nav_cart), navigateToLogin),
-                    AgnelloBottomNavItem(Icons.Filled.Person, stringResource(R.string.bottom_nav_profile), navigateToLogin)
+                    AgnelloBottomNavItem(Icons.Filled.ShoppingCart, stringResource(R.string.bottom_nav_cart)) { /* tela do carrinho: fora do escopo deste protótipo */ },
+                    AgnelloBottomNavItem(Icons.Filled.Person, stringResource(R.string.bottom_nav_profile)) { /* tela de perfil: fora do escopo deste protótipo */ }
                 )
             )
         },
@@ -190,6 +191,6 @@ fun HomeScreen(navigateToLogin: () -> Unit) {
 @Composable
 private fun HomeScreenPreview() {
     VinheriaagnelloTheme {
-        HomeScreen(navigateToLogin = {})
+        HomeScreen()
     }
 }
