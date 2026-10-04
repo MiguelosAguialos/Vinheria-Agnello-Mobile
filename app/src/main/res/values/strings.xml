@@ -14,4 +14,53 @@
     <string name="login_to_continue_your_experience">Entre para continuar</string>
     <string name="forgot_my_password">Esqueci minha senha</string>
     <string name="remember_next_time">Lembrar login</string>
+
+    <!-- Content descriptions (acessibilidade) -->
+    <string name="content_desc_wine_login_logo">Logo de login com taça de vinho</string>
+    <string name="content_desc_wine_signup_logo">Logo de cadastro com taça de vinho</string>
+    <string name="content_desc_email_field">Seu e-mail</string>
+    <string name="content_desc_password_field">Sua senha</string>
+    <string name="content_desc_hide_password">Ocultar senha</string>
+    <string name="content_desc_show_password">Mostrar senha</string>
+    <string name="content_desc_back">Voltar</string>
+
+    <!-- Home -->
+    <string name="home_top_bar_title">Vinheria Agnello</string>
+    <string name="home_cart_content_description">Carrinho</string>
+    <string name="home_search_placeholder">Buscar rótulo, uva ou região</string>
+
+    <string name="category_all">Todos</string>
+    <string name="category_red">Tintos</string>
+    <string name="category_white">Brancos</string>
+    <string name="category_sparkling">Espumantes</string>
+    <string name="category_club">Clube</string>
+
+    <string name="curation_eyebrow">Sommelier virtual</string>
+    <string name="curation_title">Não sabe por onde começar?</string>
+    <string name="curation_text">Responda 3 perguntas rápidas e receba recomendações no seu perfil.</string>
+    <string name="curation_cta">Fazer o quiz</string>
+
+    <string name="section_selected_title">Selecionados pra você</string>
+    <string name="section_see_all">ver tudo</string>
+    <string name="badge_climatizado">climatizado</string>
+
+    <string name="bottom_nav_home">Início</string>
+    <string name="bottom_nav_search">Buscar</string>
+    <string name="bottom_nav_cart">Sacola</string>
+    <string name="bottom_nav_profile">Perfil</string>
+    <string name="fab_quiz_content_description">Sommelier virtual</string>
+
+    <!-- Catálogo (vitrine da Home) -->
+    <string name="wine_1_name">Ripasso Valpolicella</string>
+    <string name="wine_1_region">Veneto, Itália · 2021</string>
+    <string name="wine_1_price">R$ 189</string>
+    <string name="wine_2_name">Chardonnay Reserva</string>
+    <string name="wine_2_region">Serra Gaúcha, BR · 2023</string>
+    <string name="wine_2_price">R$ 96</string>
+    <string name="wine_3_name">Malbec Alta Colina</string>
+    <string name="wine_3_region">Mendoza, ARG · 2022</string>
+    <string name="wine_3_price">R$ 142</string>
+    <string name="wine_4_name">Espumante Brut Agnello</string>
+    <string name="wine_4_region">Pinto Bandeira, BR</string>
+    <string name="wine_4_price">R$ 118</string>
 </resources>
