@@ -5,6 +5,8 @@
     <string name="your_password">Senha</string>
     <string name="your_email">Email</string>
     <string name="complete_name">Nome completo</string>
+    <string name="birth_date">Data de nascimento</string>
+    <string name="birth_date_placeholder">DD/MM/AAAA</string>
     <string name="create_your_account">Crie sua conta</string>
     <string name="join_vinheria_agnello">Entre para Vinheria Agnello</string>
     <string name="login">Entrar</string>
